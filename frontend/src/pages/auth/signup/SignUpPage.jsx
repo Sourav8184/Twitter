@@ -48,8 +48,6 @@ const SignUpPage = () => {
         }
         return data;
       } catch (error) {
-        console.error(error);
-        toast.error(error.message);
         throw new Error(error);
       }
     },
@@ -57,6 +55,9 @@ const SignUpPage = () => {
     onSuccess: () => {
       toast.success("Account created successfully");
       queryClient.invalidateQueries({ queryKey: ["authUser"] });
+    },
+    onError: () => {
+      toast.error("SignUp failed");
     },
   });
 

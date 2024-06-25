@@ -45,8 +45,6 @@ const LoginPage = () => {
           throw new Error(data.error || "Something went wrong");
         }
       } catch (error) {
-        console.error(error);
-        toast.error(error.message);
         throw new Error(error);
       }
     },
@@ -55,6 +53,9 @@ const LoginPage = () => {
       toast.success("Account Login successfully");
       // refetch the authUser
       queryClient.invalidateQueries({ queryKey: ["authUser"] });
+    },
+    onError: () => {
+      toast.error("Login failed");
     },
   });
 
