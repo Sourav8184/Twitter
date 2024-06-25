@@ -9,7 +9,7 @@ import {
   getLikedPosts,
   getUserPosts,
   likeUnlikePost,
-} from "../controllers/postController.js";
+} from "../controllers/postControllers.js";
 
 /* ---------------------------------------------------------- */
 
