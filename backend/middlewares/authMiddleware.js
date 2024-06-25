@@ -5,6 +5,7 @@ import userModel from "../models/userModel.js";
 
 export const verifyJWT = async (req, res, next) => {
   try {
+    console.log("1");
     const token =
       req.cookies?.accessToken ||
       req.header("Authorization")?.replace("Bearer ", "");
