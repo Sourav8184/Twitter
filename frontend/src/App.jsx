@@ -6,6 +6,9 @@ import HomePage from "./pages/home/HomePage";
 import SignUpPage from "./pages/auth/signup/SignUpPage";
 import LoginPage from "./pages/auth/login/LoginPage";
 
+// React Hot Toast:
+import { Toaster } from "react-hot-toast";
+
 // App Component:
 function App() {
   return (
@@ -15,6 +18,7 @@ function App() {
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/login" element={<LoginPage />} />
       </Routes>
+      <Toaster />
     </div>
   );
 }
