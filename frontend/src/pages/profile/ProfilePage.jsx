@@ -5,6 +5,7 @@ import { Link, useParams } from "react-router-dom";
 // Components:
 import Posts from "../../components/common/Posts";
 import ProfileHeaderSkeleton from "../../components/skeletons/ProfileHeaderSkeleton";
+import EditProfileModal from "./EditProfileModal";
 import { formatMemberSinceDate } from "../../utils/date/date.js";
 
 // Hooks:
@@ -164,6 +165,7 @@ const ProfilePage = () => {
                 </div>
               </div>
               <div className="flex justify-end px-4 mt-5">
+                {isMyProfile && <EditProfileModal authUser={authUser} />}
                 {!isMyProfile && (
                   <button
                     className="btn btn-outline rounded-full btn-sm"
