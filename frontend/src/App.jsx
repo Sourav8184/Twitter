@@ -2,7 +2,7 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
 // Components:
-import HomePage from "./pages/home/HomePage";
+import HomePage from "./pages/home/HomePage.jsx";
 import SignUpPage from "./pages/auth/signup/SignUpPage";
 import LoginPage from "./pages/auth/login/LoginPage";
 import LoadingSpinner from "./components/common/LoadingSpinner.jsx";
@@ -24,7 +24,6 @@ function App() {
         if (!res.ok) {
           throw new Error(data.error || "Something went wrong");
         }
-        console.log("authUser is here:", data);
         return data;
       } catch (error) {
         throw new Error(error);
@@ -43,7 +42,7 @@ function App() {
 
   return (
     <div className="flex max-w-6xl mx-auto">
-      <Sidebar />
+      {authUser && <Sidebar />}
       <Routes>
         <Route
           path="/"
