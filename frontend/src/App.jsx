@@ -6,6 +6,7 @@ import HomePage from "./pages/home/HomePage.jsx";
 import SignUpPage from "./pages/auth/signup/SignUpPage";
 import LoginPage from "./pages/auth/login/LoginPage";
 import LoadingSpinner from "./components/common/LoadingSpinner.jsx";
+import NotificationPage from "./pages/notification/NotificationPage.jsx";
 
 // React Hot Toast:
 import { Toaster } from "react-hot-toast";
@@ -56,6 +57,10 @@ function App() {
         <Route
           path="/login"
           element={!authUser ? <LoginPage /> : <Navigate to="/" />}
+        />
+        <Route
+          path="/notifications"
+          element={authUser ? <NotificationPage /> : <Navigate to="/login" />}
         />
       </Routes>
       {authUser && <RightPanel />}
