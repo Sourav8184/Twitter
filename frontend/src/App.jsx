@@ -11,6 +11,7 @@ import LoadingSpinner from "./components/common/LoadingSpinner.jsx";
 import { Toaster } from "react-hot-toast";
 import Sidebar from "./components/common/Sidebar";
 import { useQuery } from "@tanstack/react-query";
+import RightPanel from "./components/common/RightPanel.jsx";
 
 // App Component:
 function App() {
@@ -57,6 +58,7 @@ function App() {
           element={!authUser ? <LoginPage /> : <Navigate to="/" />}
         />
       </Routes>
+      {authUser && <RightPanel />}
       <Toaster />
     </div>
   );
